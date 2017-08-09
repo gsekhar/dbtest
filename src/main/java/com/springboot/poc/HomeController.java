@@ -40,9 +40,9 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/getData/{id}")
 	public User getData(@PathVariable("id") String id) {
-		String username = "TOSS_DLMS";
-		String password = "toss_dlms";
-		String url = "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = dukeortv97.corp.cox.com)(PORT = 1521)) (CONNECT_DATA = (SERVER =DEDICATED) (SERVICE_NAME = DTELOPS.WORLD)))";
+		String username = "**";
+		String password = "***";
+		String url = "***";
 		User user = new User();
 		System.out.println("====>>>>>>dev_app_db_username Env =======" + System.getProperty("dev_app_db_username"));
 		System.out.println("====>>>>>>JWS_ADMIN_PASSWORD Env =======" + System.getProperty("JWS_ADMIN_PASSWORD"));
@@ -72,7 +72,7 @@ public class HomeController {
 	@RequestMapping(method = RequestMethod.GET, value = "/getsoacon")
 	public static boolean pingsoaHost() {
 		try (Socket socket = new Socket()) {
-			socket.connect(new InetSocketAddress("10.62.116.161", 8180), 60);
+			socket.connect(new InetSocketAddress("123124", 8180), 60);
 			return true;
 		} catch (IOException e) {
 			return false; // Either timeout or unreachable or failed DNS lookup.
@@ -81,7 +81,7 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/geticomscon")
 	public static void pingIcomsHost() {
-		String https_url = "https://apigateway.qaint.cox.com/BIS/WorkOrderServices";
+		String https_url = "";
 		URL url;
 		try {
 			url = new URL(https_url);
@@ -98,9 +98,9 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/geticdb")
 	public void comsDB() {
-		String username = "port_out";
-		String password = "port_out";
-		String url = "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=xhastage-duke1.corp.cox.com)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=xhastage-duke2.corp.cox.com)(PORT=1521))(FAILOVER=YES)(LOAD_BALANCE=NO))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=QHASTAGE_GENERIC_APP.WORLD)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC))))";
+		String username = "****";
+		String password = "***";
+		String url = "";
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
